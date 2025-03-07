@@ -9,6 +9,7 @@ const App = () => {
     const [isClassApplied, setClassApplied] = useState(false);
     const [clickCard, setClickCard] = useState(false);
     const [showButton, setShowButton] = useState(false);
+    const [TotalFlashcards, setTotalFlashcards] = useState(fruitData.length);
     const test = fruitData[imgIndex];
 
     const randomFlashcards = () => 
@@ -31,11 +32,18 @@ const App = () => {
         setShowButton(true);
         setClassApplied(true);
         randomFlashcards();
+        setTotalFlashcards(prev => {
+            if (prev > 0 ) {
+              return prev - 1; 
+            }
+            return 0; 
+          });
     }
 
 
     const changeIndexDown = () =>
     {
+        setTotalFlashcards(prev => prev + 1);
         setPreviousIndex(prev => prev.slice(0, -1));
     }
 
@@ -50,6 +58,7 @@ const App = () => {
             <div className="title">
                 <h1>Vegetable or Fruit?&#128557; &#128557;</h1>
                 <h4>Can you guess whether this is a vegetable or fruit?</h4>
+                <h5 className={isClassApplied ? "Display" : "noShow"}>Flashcards Left: {TotalFlashcards}</h5>
             </div>
             <div className={clickCard ? "container cardClicked" : "container"}
                  onClick = {() => setClickCard(prev => !prev)}>
