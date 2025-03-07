@@ -1,0 +1,60 @@
+[
+    {
+        "alt": "Lettuce",
+        "img" : "/image/Lettuce.jpg",
+        "answer" : "Lettuce is a vegetable!"
+    },
+    {
+        "alt": "Carrots",
+        "img" : "/image/Carrot.jpg",
+        "answer" : "Carrot is a vegetable!"
+    }
+    ,
+    {
+        "alt": "Squash",
+        "img" : "/image/Squash.jpg",
+        "answer" : "Squash is a fruit!"
+    }
+    ,
+    {
+        "alt": "Tomatoes",
+        "img" : "/image/Tomato.jpg",
+        "answer" : "Tomato is a fruit!"
+    }
+    ,
+    {
+        "alt": "Peppers",
+        "img" : "/image/Peppers.jpg",
+        "answer" : "Pepper is a fruit!"
+    }
+    ,
+    {
+        "alt": "Pumpkin",
+        "img" : "/image/Pumpkin.jpg",
+        "answer" : "Pumpkin is a fruit!"
+    }
+    ,
+    {
+        "alt": "Potatoes",
+        "img" : "/image/Potatoes.jpg",
+        "answer" : "Potatoes are vegetables!"
+    }
+    ,
+    {
+        "alt": "Corn",
+        "img" : "/image/Corn.jpg",
+        "answer" : "Corn is a vegetable!"
+    }
+    ,
+    {
+        "alt": "Cucumbers",
+        "img" : "/image/Cucumbers.jpg",
+        "answer" : "Cucumber is a fruit!"
+    }
+    ,
+    {
+        "alt": "Broccoli",
+        "img" : "/image/Broccoli.jpg",
+        "answer" : "Broccoli is a vegetable!"
+    }
+]
