@@ -1,8 +1,7 @@
-# Web Development Project 2 - Flashcards!
-
+# Web Development Project 3 -  FlashCarrd
 Submitted by: Mike Lin
 
-This web app: A flashcard web that tests your knowledge of fruits and vegetables
+This web app: Dynamic flashcard
 
 Time spent: 7 hours spent in total
 
@@ -10,30 +9,30 @@ Time spent: 7 hours spent in total
 
 The following **required** functionality is completed:
 
-- [X] **The title of the card set and some information about it, such as a short description and the total number of cards are displayed**
-- [X] **A single card at a time is displayed, only showing one of the components of the information pair**
-- [X] **A list of card pairs is created**
-- [X] **Clicking on the card shows the corresponding component of the information pair**
-- [X] **Clicking the next button displays a random new card**
+- [x] **The user can enter their guess in a box before seeing the flipside of the card**
+- [x] **Clicking on a submit button shows visual feedback about whether the answer was correct or incorrect**
+- [x] **A back button is displayed on the card and can be used to return to the previous card in a set sequence**
+- [x] **A next button is displayed on the card and can be used to navigate to the next card in a set sequence**
 
 The following **optional** features are implemented:
 
-- [X] Cards contains images in addition to or in place of text
-- [ ] Cards have different visual styles such as color based on their category
-  - [ ] *visual style implemented*
+- [ ] A shuffle button is used to randomize the order of the cards
+- [ ] A user's answer may be counted as correct even when it is slightly different from the target answer
+- [ ] A counter displays the user's current and longest streak of correct responses
+- [ ] A user can mark a card that they have mastered and have it removed from the pool of answers as well as added to a list of mastered cards
 
 The following **additional** features are implemented:
 
-* [X] Remembers the previously seen flashcards in order.
+* [ ] List anything else that you added to improve the site's functionality!
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented required features:
+Here's a walkthrough of implemented user stories:
 
-<img src='/public/codePathProject2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./public/codePathProject4.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ScreenToGif 
+GIF created with ScreenToGif  
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -41,8 +40,7 @@ GIF created with ScreenToGif
 
 ## Notes
 
-implementing a backwards method that remembers the previous flashcards took a lot of time, due to 
-index off by 1 error.
+Describe any challenges encountered while building the app.
 
 ## License
 

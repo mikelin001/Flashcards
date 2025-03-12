@@ -12,6 +12,22 @@ const App = () => {
     const [TotalFlashcards, setTotalFlashcards] = useState(fruitData.length);
     const test = fruitData[imgIndex];
 
+    const [input, setInput] = useState('');
+    const [CorrectAnswer, setCorrectAnswer] = useState('');
+    const handleChange = (e) => setInput(e.target.value);
+
+    const CheckAnswer = () => 
+    {
+        setCorrectAnswer(((test.answer == input)? "true" : "false"));
+    }
+
+   /*  useEffect(() => {
+        if(CorrectAnswer == "true")
+            {
+                displayAndRandom();
+            }
+    }, [CorrectAnswer]); */
+
     const randomFlashcards = () => 
     {
         setClickCard(false);
@@ -29,21 +45,29 @@ const App = () => {
 
     const displayAndRandom = () =>
     {
+        setInput('');
+        setCorrectAnswer('');
         setShowButton(true);
         setClassApplied(true);
         randomFlashcards();
         setTotalFlashcards(prev => {
-            if (prev > 0 ) {
+            if ((prev > 0)) {
               return prev - 1; 
             }
-            return 0; 
           });
     }
 
 
     const changeIndexDown = () =>
     {
-        setTotalFlashcards(prev => prev + 1);
+        setTotalFlashcards(prev => {
+            if(prev < fruitData.length-1)
+            {
+                return prev + 1;
+            }
+            return prev;
+        }
+        );
         setPreviousIndex(prev => prev.slice(0, -1));
     }
 
@@ -60,19 +84,23 @@ const App = () => {
                 <h4>Can you guess whether this is a vegetable or fruit?</h4>
                 <h5 className={isClassApplied ? "Display" : "noShow"}>Flashcards Left: {TotalFlashcards}</h5>
             </div>
-            <div className={clickCard ? "container cardClicked" : "container"}
+            <div className={`${clickCard ? "container cardClicked" : "container"}`} id={CorrectAnswer}
                  onClick = {() => setClickCard(prev => !prev)}>
-            <div className={isClassApplied ? "flipCard" : ""}>
-                <div className="flipCardInner">
-                    <div className="frontSide">
-                        <img className={isClassApplied ? "Display" : ""} src={test.img} alt={test.alt}/>
-                    </div>
-                    
-                    <div className={isClassApplied ? "backSide" : "noShow"}>
-                        {test.answer}
+                <div className={isClassApplied ? "flipCard" : ""}>
+                    <div className="flipCardInner">
+                        <div className="frontSide">
+                            <img className={isClassApplied ? "Display" : ""} src={test.img} alt={test.alt}/>
+                        </div>
+                        
+                        <div className={isClassApplied ? "backSide" : "noShow"}>
+                            {test.display}
+                        </div>
                     </div>
                 </div>
             </div>
+            <div className={`${isClassApplied ? "Display" : "noShow"} textContainer`}>
+                <input type="text" name="answer" value={input} placeholder="Type Vegetable or Fruit" onChange={handleChange} id={CorrectAnswer}/>
+                <button onClick={CheckAnswer}>Submit Answer</button>
             </div>
             <div className="navButtons">
             <button onClick={changeIndexDown}>&larr;</button>
